@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <ul class="nav navbar-nav mr-auto ">
+          <li class="nav-item active">
+            <a class="nav-link" href="<%= posts_path %>">Статьи</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Контакты</a>
+          </li>
+        </ul>
+        <%= link_to 'Новая статья', new_post_path, class: "btn btn-outline-primary float-xs-right" %>
+      </nav>
+    </div>
+
+    <div class="container main">
+      <div class="row">
+        <div class="col-md-12">
+          <% flash.each do |name, message| %>
+            <div class="alert alert-<%= name %>">
+              <%= message %>
+            </div> 
+          <% end %>
+        </div>
+      </div>  
+
+      <%= yield %>
+    </div>
+  </body>
+</html>

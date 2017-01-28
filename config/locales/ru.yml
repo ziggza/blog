@@ -1,0 +1,16 @@
+ru:
+  common:
+    errors: 'При заполении формы возникла ошибка'
+    back: 'Назад'
+    save: 'Сохранить'
+  posts:
+    index:
+      title: 'Cтатьи'
+    new:
+      title: 'Новая статья'
+    edit:
+      title: 'Редактировани статьи'
+    form:
+      submit: 
+        '%{action} статью'
+
